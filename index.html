@@ -307,24 +307,34 @@
             submitBtn.style.opacity = "0.7";
             submitBtn.disabled = true;
 
+            // Convert FormData directly into clean JSON for Web3Forms
             const formData = new FormData(leadForm);
-            
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
             })
             .then(async (response) => {
+                let res = await response.json();
                 if (response.status == 200) {
                     const name = document.getElementById('studentName').value;
                     alert(`Thank you ${name}! Your free spoken English consultation slot has been reserved. Check your email for confirmation.`);
                     leadForm.reset();
                     modalOverlay.classList.remove('active');
                 } else {
-                    alert("Submission configuration required. Make sure you entered your Web3Forms Key inside the code.");
+                    // Show exact error message coming back from Web3Forms server
+                    alert(res.message || "Submission configuration required. Make sure you entered your Web3Forms Key inside the code.");
                 }
             })
             .catch(error => {
-                alert("Connection error. Please check your internet connection.");
+                console.error("Submission Error Details:", error);
+                alert("Form submission failed. If you are testing locally, make sure your Web3Forms Access Key is active and valid.");
             })
             .finally(() => {
                 submitBtn.innerText = "Submit & Book Consultation";
@@ -333,5 +343,3 @@
             });
         });
     </script>
-</body>
-</html>
