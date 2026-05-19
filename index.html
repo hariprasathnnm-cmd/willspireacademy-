@@ -285,6 +285,41 @@
             </form>
         </div>
     </div>
+<div id="thankYouPage">
+        <div class="glow-effect" style="top: 20%; left: 30%;"></div>
+        <div class="success-card">
+            <div class="success-icon-wrap">✓</div>
+            <span class="badge-premium">Slot Reserved Successfully</span>
+            <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin-top: 1rem; letter-spacing: -1px;">
+                Thank You, <span id="dynamicName" style="color: var(--emerald-primary);">Student</span>!
+            </h2>
+            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 1.05rem;">
+                Your request for a free One-to-One consultation has been accepted into our admissions desk queue.
+            </p>
+
+            <div class="next-steps-box">
+                <h4 style="font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-main);">
+                    What Happens Next?
+                </h4>
+                <div class="step-item">
+                    <div class="step-badge">1</div>
+                    <p>Our executive senior academic mentor will review your registration location profiles.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-badge">2</div>
+                    <p>You will receive a call directly on your mobile number <strong id="dynamicPhone" style="color: var(--text-main);"></strong> within 24 business hours.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-badge">3</div>
+                    <p>We will construct your custom Fluency Weakness Profile analysis chart absolutely free.</p>
+                </div>
+            </div>
+
+            <button class="btn-gradient" id="backToHomeBtn" style="padding: 1rem 3rem; font-size: 1rem;">
+                Return to Homepage
+            </button>
+        </div>
+    </div>
 
     <script>
         const modalOverlay = document.getElementById('leadModal');
@@ -292,6 +327,13 @@
         const openModalButtons = document.querySelectorAll('.open-lead-form');
         const leadForm = document.getElementById('studentLeadForm');
         const submitBtn = document.getElementById('submitBtn');
+        
+        // Thank You Page Elements
+        const mainWebsite = document.getElementById('mainWebsite');
+        const thankYouPage = document.getElementById('thankYouPage');
+        const dynamicName = document.getElementById('dynamicName');
+        const dynamicPhone = document.getElementById('dynamicPhone');
+        const backToHomeBtn = document.getElementById('backToHomeBtn');
 
         openModalButtons.forEach(button => {
             button.addEventListener('click', () => modalOverlay.classList.add('active'));
@@ -300,10 +342,11 @@
         closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
         modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) modalOverlay.classList.remove('active'); });
 
+        // Handle Form Submission
         leadForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            submitBtn.innerText = "Processing Your Slot...";
+            submitBtn.innerText = "Securing Your Slot...";
             submitBtn.style.opacity = "0.7";
             submitBtn.disabled = true;
 
@@ -315,16 +358,29 @@
             })
             .then(async (response) => {
                 if (response.status == 200) {
-                    const name = document.getElementById('studentName').value;
-                    alert(`Thank you ${name}! Your free spoken English consultation slot has been reserved. Check your email for confirmation.`);
-                    leadForm.reset();
+                    // Extract data for personalization
+                    const nameInput = document.getElementById('studentName').value;
+                    const phoneInput = document.getElementById('studentPhone').value;
+                    
+                    // Inject details directly into the dynamic Thank You page fields
+                    dynamicName.innerText = nameInput;
+                    dynamicPhone.innerText = phoneInput;
+
+                    // Close input modal window safely
                     modalOverlay.classList.remove('active');
+                    
+                    // Smooth transformation to Thank You page layout
+                    mainWebsite.style.display = "none";
+                    window.scrollTo(0,0);
+                    thankYouPage.classList.add('active');
+                    
+                    leadForm.reset();
                 } else {
-                    alert("Submission configuration required. Make sure you entered your Web3Forms Key inside the code.");
+                    alert("Configuration Error: Make sure your Web3Forms Access Key is pasted accurately inside the code.");
                 }
             })
             .catch(error => {
-                alert("Connection error. Please check your internet connection.");
+                alert("Network latency error. Please check your internet connection.");
             })
             .finally(() => {
                 submitBtn.innerText = "Submit & Book Consultation";
@@ -332,6 +388,14 @@
                 submitBtn.disabled = false;
             });
         });
+
+        // Return Home button handler
+        backToHomeBtn.addEventListener('click', () => {
+            thankYouPage.classList.remove('active');
+            mainWebsite.style.display = "block";
+            window.scrollTo(0,0);
+        });
     </script>
 </body>
 </html>
+    
