@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willspire Academy | Premium Spoken English Training</title>
+    <title>Willspire Academy | Premium Spoken English Training & Corporate Fluency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-luxury: #FAFAFA;
@@ -19,13 +19,24 @@
             --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
             --font-display: 'Poppins', 'Inter', sans-serif;
             --font-sans: 'Inter', sans-serif;
+            
+            /* Dark Mode Variables for Thank You State */
+            --bg-dark-luxury: #0B0F19;
+            --text-dark-main: #F3F4F6;
+            --text-dark-muted: #9CA3AF;
+            --glass-dark-bg: rgba(17, 24, 39, 0.7);
+            --glass-dark-border: rgba(16, 185, 129, 0.15);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background-color: var(--bg-luxury); color: var(--text-main); font-family: var(--font-sans); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg-luxury); color: var(--text-main); font-family: var(--font-sans); overflow-x: hidden; -webkit-font-smoothing: antialiased; transition: background-color 0.4s ease, color 0.4s ease; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Premium Badges & Buttons */
         .badge-premium { display: inline-block; background: rgba(5, 150, 105, 0.08); border: 1px solid rgba(5, 150, 105, 0.2); color: var(--emerald-primary); text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; padding: 0.5rem 1.2rem; border-radius: 100px; margin-bottom: 1.5rem; }
         .btn-gradient { display: inline-block; background: var(--emerald-gradient); color: #FFFFFF; text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; padding: 1.1rem 2.5rem; border-radius: 100px; box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border: none; cursor: pointer; text-align: center; }
         .btn-gradient:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(5, 150, 105, 0.45); }
+        
+        /* UI Elements */
         .glass-card { background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: var(--shadow-premium); padding: 2.5rem; transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .glass-card:hover { transform: translateY(-5px); box-shadow: 0 30px 60px -15px rgba(5, 105, 105, 0.1); }
         .bullet-list { list-style: none; margin-top: 1.5rem; margin-bottom: 2rem; }
@@ -33,9 +44,12 @@
         .bullet-icon { color: var(--emerald-primary); font-weight: bold; font-size: 1.2rem; }
         .urgency-text { display: block; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; font-weight: 500; }
         .glow-effect { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none; }
+        
+        /* Navigation Styles */
         header { padding: 2rem 0; position: absolute; width: 100%; top: 0; z-index: 10; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--text-main); letter-spacing: -0.5px; }
+
+        /* Sections Styles */
         #hero { padding: 10rem 0 6rem 0; position: relative; }
         .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
         .hero-left { position: relative; display: flex; justify-content: center; }
@@ -45,24 +59,30 @@
         .fc-1 { top: 15%; left: -10%; } .fc-2 { top: 45%; right: -10%; } .fc-3 { bottom: 15%; left: -5%; } .fc-4 { bottom: -5%; right: 5%; }
         .hero-right h2 { font-family: var(--font-display); font-size: 3.5rem; line-height: 1.15; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 1.5rem; }
         .hero-right .subheadline { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
-        .trust-text { margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; }
+
         #special-offer { padding: 6rem 0; position: relative; }
         .offer-box { max-width: 900px; margin: 0 auto; text-align: center; border: 2px solid rgba(5, 150, 105, 0.2); background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,253,250,0.5) 100%); }
-        .offer-box h2 { font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1rem; }
         .price-tag { font-family: var(--font-display); font-size: 4rem; font-weight: 700; color: var(--emerald-primary); margin: 1.5rem 0; letter-spacing: -2px; }
-        .offer-grid-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; text-align: left; margin: 2.5rem 0; font-weight: 500; color: var(--text-muted); }
+
         #features { padding: 6rem 0; }
         .section-title { text-align: center; font-family: var(--font-display); font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 4rem; }
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .feature-icon { width: 48px; height: 48px; background: rgba(5, 150, 105, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--emerald-primary); font-weight: 700; font-size: 1.25rem; margin-bottom: 1.5rem; }
-        .features-grid h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .features-grid p { color: var(--text-muted); line-height: 1.6; font-size: 0.98rem; }
-        #how-it-works { padding: 6rem 0; background: #FFFFFF; }
+        
+        #deep-curriculum { padding: 6rem 0; background-color: #FFFFFF; }
+        .curriculum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .module-block { border-left: 3px solid var(--emerald-primary); padding-left: 1.5rem; margin-bottom: 2rem; }
+        .module-block h4 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .module-block p { color: var(--text-muted); line-height: 1.6; }
+
+        #how-it-works { padding: 6rem 0; }
         .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 2rem; position: relative; margin-top: 4rem; }
         .timeline-step { position: relative; padding-left: 1.5rem; border-left: 2px solid var(--glass-border); }
         .step-num { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--emerald-primary); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
-        .timeline-step h4 { font-size: 1.2rem; font-family: var(--font-display); font-weight: 600; }
-        #ai-app { padding: 6rem 0; position: relative; }
+        .timeline-step h4 { font-size: 1.2rem; font-family: var(--font-display); font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-step p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+        #ai-app { padding: 6rem 0; position: relative; background-color: #FFFFFF; }
         .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .ai-app-visual { background: #111827; border-radius: 32px; padding: 2rem; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.1); color: #FFFFFF; position: relative; overflow: hidden; }
         .ui-header { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
@@ -70,189 +90,413 @@
         .ui-dot:nth-child(2) { background: #F59E0B; }
         .ui-dot:nth-child(3) { background: #10B981; }
         .chat-bubble { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: 0.9rem; border-left: 3px solid var(--emerald-primary); }
+
         #testimonials { padding: 6rem 0; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 5rem; }
         .testimonial-card p { font-size: 1.1rem; font-style: italic; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
-        .student-profile { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
-        .trust-counter-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; border-top: 1px solid var(--glass-border); padding-top: 4rem; }
-        .counter-item h4 { font-family: var(--font-display); font-size: 2.5rem; color: var(--emerald-primary); font-weight: 700; }
-        .counter-item p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; }
-        #final-cta { padding: 8rem 0; text-align: center; position: relative; }
-        #final-cta h2 { font-family: var(--font-display); font-size: 3rem; letter-spacing: -1.5px; max-width: 800px; margin: 0 auto 1.5rem auto; }
+        .student-profile { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--emerald-primary); }
+
         #contact { padding: 6rem 0; background: #FFFFFF; }
         .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
         .contact-card { text-align: center; padding: 3rem 2rem; }
         .contact-card h4 { font-family: var(--font-display); font-weight: 1.25rem; margin-bottom: 0.8rem; }
         .contact-card p { color: var(--text-muted); font-size: 1rem; }
-        footer { background: #111827; color: #9CA3AF; padding: 4rem 0; font-size: 0.95rem; }
-        .footer-grid { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 3rem; margin-bottom: 2rem; }
-        .footer-left h3 { color: #FFFFFF; margin-bottom: 0.5rem; font-family: var(--font-display); }
-        .social-links { display: flex; gap: 1.5rem; }
-        .social-links a { color: #9CA3AF; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .social-links a:hover { color: #10B981; }
-        .footer-bottom { text-align: center; font-size: 0.85rem; }
+        footer { background: #111827; color: #9CA3AF; padding: 4rem 0; font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-        /* LEAD MODAL POPUP SYSTEM */
+        /* Popup Lead Card Overlay */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .lead-form-card { background: #FFFFFF; width: 100%; max-width: 480px; border-radius: 28px; padding: 2.5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid rgba(5, 150, 105, 0.15); position: relative; transform: translateY(30px); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .modal-overlay.active .lead-form-card { transform: translateY(0); }
         .close-modal-btn { position: absolute; top: 1.25rem; right: 1.25rem; background: #F3F4F6; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; font-weight: 600; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
         .close-modal-btn:hover { background: #E5E7EB; }
+        
         .form-group { margin-bottom: 1.5rem; text-align: left; }
         .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem; }
         .form-group input { width: 100%; padding: 1rem 1.2rem; border: 1px solid #E5E7EB; background: #F9FAFB; border-radius: 12px; font-family: var(--font-sans); font-size: 1rem; color: var(--text-main); transition: all 0.3s; }
         .form-group input:focus { outline: none; border-color: var(--emerald-primary); background: #FFFFFF; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
 
+        /*--------------------------------------------------------------
+        # COMBINED DYNAMIC THANK YOU PAGE STYLING (HIDDEN BY DEFAULT)
+        --------------------------------------------------------------*/
+        #thankyou-view {
+            display: none; /* Initially Hidden */
+            min-height: 100vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 4rem 2rem;
+        }
+        
+        .thankyou-glow { 
+            position: absolute; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(11,15,25,0) 70%); 
+            z-index: 1; 
+            pointer-events: none; 
+        }
+
+        /* INITIAL LOADER SCREEN OVERLAY */
+        #premium-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark-luxury);
+            z-index: 9999;
+            display: none; /* Controlled via submission JS */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            border-top-color: #10B981;
+            animation: spin 1s ease-in-out infinite;
+        }
+        .loader-text {
+            margin-top: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #10B981;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .success-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        
+        /* Triggers sleek premium float reveal once active */
+        .success-container.reveal-animate {
+            animation: slideUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .success-card { 
+            background: var(--glass-dark-bg); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-dark-border); 
+            border-radius: 36px; 
+            padding: 4rem 3rem; 
+            text-align: center;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.6), 0 0 80px -10px rgba(16, 185, 129, 0.1);
+        }
+
+        .success-icon-wrap { 
+            width: 100px; 
+            height: 100px; 
+            background: rgba(16, 185, 129, 0.1); 
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 0 auto 2.5rem auto; 
+            color: #10B981; 
+            font-size: 3.5rem; 
+            font-weight: 300;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+            animation: pulseGlow 2.5s infinite; 
+        }
+
+        .badge-dark-premium { 
+            display: inline-block; 
+            background: rgba(16, 185, 129, 0.1); 
+            border: 1px solid rgba(16, 185, 129, 0.3); 
+            color: #10B981; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            padding: 0.6rem 1.5rem; 
+            border-radius: 100px; 
+        }
+
+        .success-card h2 { 
+            font-family: var(--font-display); 
+            font-size: 2.6rem; 
+            font-weight: 800; 
+            margin-top: 1.5rem; 
+            letter-spacing: -1px; 
+            line-height: 1.2;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description { color: var(--text-dark-muted); margin-top: 1rem; font-size: 1.1rem; line-height: 1.6; }
+        .next-steps-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 2rem; margin: 2.5rem 0; text-align: left; }
+        .next-steps-box h4 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin-bottom: 1.5rem; color: #FFFFFF; letter-spacing: 0.5px; }
+        .step-item { display: flex; gap: 1.2rem; margin-bottom: 1.2rem; font-size: 0.98rem; line-height: 1.6; color: var(--text-dark-muted); }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-badge { background: var(--emerald-gradient); color: #FFFFFF; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3); }
+        .step-item strong { color: #FFFFFF; }
+
+        /* KEYFRAMES SETUP */
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes slideUpReveal { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.3); } 70% { box-shadow: 0 0 0 25px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+
         @media (max-width: 1024px) {
-            .hero-grid, .ai-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+            .hero-grid, .ai-grid, .curriculum-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
             .hero-left { order: 2; } .hero-right { order: 1; }
             .hero-right .bullet-list { display: inline-block; text-align: left; }
             .features-grid, .timeline, .testimonial-grid, .contact-grid { grid-template-columns: 1fr; }
-            .offer-grid-list { grid-template-columns: 1fr; }
-            .trust-counter-bar { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
             .floating-card { display: none; }
+            .module-block { border-left: none; border-top: 3px solid var(--emerald-primary); padding-left: 0; padding-top: 1rem; }
         }
+        @media (max-width: 640px) { .success-card { padding: 3rem 1.5rem; border-radius: 28px; } .success-card h2 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
-    <div class="glow-effect" style="top: 10%; left: 5%;"></div>
-    <div class="glow-effect" style="top: 40%; right: -10%;"></div>
+    <div id="premium-loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Securing Admission Slot...</div>
+    </div>
 
-    <header>
-        <div class="container nav-container">
-            <div class="logo">Willspire<span>.</span></div>
-            <button class="btn-gradient open-lead-form" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; box-shadow: none;">Consult Free</button>
-        </div>
-    </header>
+    <div id="landing-view">
+        <div class="glow-effect" style="top: 10%; left: 5%;"></div>
+        <div class="glow-effect" style="top: 40%; right: -10%;"></div>
 
-    <section id="hero">
-        <div class="container hero-grid">
-            <div class="hero-left">
-                <div class="trainer-image-container">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Willspire Executive Mentors" class="trainer-img">
-                    <div class="floating-card fc-1">✨ Live Training</div>
-                    <div class="floating-card fc-2">🤖 AI Mentor Support</div>
-                    <div class="floating-card fc-3">🤝 100% One-to-One</div>
-                    <div class="floating-card fc-4">🛡️ Money Back</div>
+        <header>
+            <div class="container nav-container">
+                <div class="logo-wrapper" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="premium-emblem" style="width: 32px; height: 32px; background: var(--emerald-gradient); border-radius: 8px; transform: rotate(45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                        <span style="color: #FFFFFF; font-weight: 800; font-size: 0.9rem; transform: rotate(-45deg); font-family: var(--font-display);">W</span>
+                    </div>
+                    <div class="logo" style="font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--text-main); letter-spacing: -0.5px;">
+                        Willspire<span style="color: var(--emerald-primary);">.</span>
+                    </div>
+                </div>
+                <button class="btn-gradient open-lead-form" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; box-shadow: none;">Consult Free</button>
+            </div>
+        </header>
+
+        <section id="hero">
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <div class="trainer-image-container">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Willspire Executive Mentors" class="trainer-img">
+                        <div class="floating-card fc-1">✨ Live Training</div>
+                        <div class="floating-card fc-2">🤖 AI Mentor Support</div>
+                        <div class="floating-card fc-3">🤝 100% One-to-One</div>
+                        <div class="floating-card fc-4">🛡️ Money Back</div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <span class="badge-premium">Limited Premium Batch</span>
+                    <h2>Master Spoken English With Absolute Fluency</h2>
+                    <p class="subheadline">Transform your career opportunities. Break free from speech hesitation, build bulletproof sentence mechanics, and communicate effortlessly in professional environments.</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet-icon">✔</span> Elite Personal Corporate Mentors</li>
+                        <li><span class="bullet-icon">✔</span> 100% Dedicated One-on-One Sessions</li>
+                        <li><span class="bullet-icon">✔</span> Dynamic Weakness-Based Syllabus Optimization</li>
+                        <li><span class="bullet-icon">✔</span> Comprehensive 24/7 Companion Practice App</li>
+                    </ul>
+                    <button class="btn-gradient open-lead-form">Reserve Your Seat Now</button>
+                    <span class="urgency-text">⚠️ Only Few One-to-One Slots Available This Week</span>
                 </div>
             </div>
-            <div class="hero-right">
-                <span class="badge-premium">Limited Premium Batch</span>
-                <h2>Master Spoken English With Confidence</h2>
-                <p class="subheadline">Transform Your Communication Skills With Personal Mentorship, AI-Powered Practice & Real-Life Speaking Training.</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet-icon">✔</span> Expert Personal Trainers</li>
-                    <li><span class="bullet-icon">✔</span> 100% One-to-One Sessions</li>
-                    <li><span class="bullet-icon">✔</span> Weakness-Based Syllabus</li>
-                    <li><span class="bullet-icon">✔</span> AI Speaking App Access</li>
-                </ul>
-                <button class="btn-gradient open-lead-form">Reserve Your Seat Now</button>
-                <span class="urgency-text">⚠️ Only Few One-to-One Slots Available</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="special-offer">
-        <div class="container">
-            <div class="glass-card offer-box">
-                <span class="badge-premium">Special Launch Offer</span>
-                <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top:1rem;">FIRST 10 CANDIDATES ONLY</h3>
-                <div class="price-tag">₹4,999</div>
-                <p style="color: var(--text-muted); font-size:1.1rem; margin-bottom: 2rem;">Get Full Premium Spoken English Training + AI Speaking App Access</p>
-                <button class="btn-gradient open-lead-form">Book Free Consultation</button>
-                <span class="urgency-text">Hurry! Limited Seats Remaining</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="features">
-        <div class="container">
-            <h2 class="section-title">Engineered For Fluid Transformation</h2>
-            <div class="features-grid">
-                <div class="glass-card">
-                    <div class="feature-icon">01</div>
-                    <h3>Expert Trainers</h3>
-                    <p>Learn from experienced mentors with practical real-life communication training.</p>
-                </div>
-                <div class="glass-card">
-                    <div class="feature-icon">02</div>
-                    <h3>100% One-to-One</h3>
-                    <p>Every session is fully personalized for individual improvement updates.</p>
-                </div>
-                <div class="glass-card">
-                    <div class="feature-icon">03</div>
-                    <h3>Weakness Syllabus</h3>
-                    <p>Customized learning based on confidence level, grammar corrections, and fluency.</p>
+        <section id="special-offer">
+            <div class="container">
+                <div class="glass-card offer-box">
+                    <span class="badge-premium">Special Launch Offer</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top:1rem;">FIRST 10 RESERVATIONS ONLY</h3>
+                    <div class="price-tag">₹4,999</div>
+                    <p style="color: var(--text-muted); font-size:1.1rem; margin-bottom: 2rem;">Unlock the entire Premium One-on-One Spoken English Track + Lifetime App Companion Tools.</p>
+                    <button class="btn-gradient open-lead-form">Book Free Consultation</button>
+                    <span class="urgency-text">Hurry! Limited Academic Slots Remaining</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Your Blueprint to Fluency</h2>
-            <div class="timeline">
-                <div class="timeline-step"><span class="step-num">Step 01</span><h4>Book Consultation</h4></div>
-                <div class="timeline-step"><span class="step-num">Step 02</span><h4>Weakness Analysis</h4></div>
-                <div class="timeline-step"><span class="step-num">Step 03</span><h4>Personalized Plan</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ai-app">
-        <div class="container ai-grid">
-            <div>
-                <span class="badge-premium">Next-Gen Interface</span>
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; letter-spacing:-1px; margin-bottom: 1rem;">Your 24×7 AI Partner</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height:1.6;">Practice English Anytime With Instant Feedback, Corrections & Confidence Building Exercises.</p>
-            </div>
-            <div class="ai-app-visual">
-                <div class="ui-header"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
-                <div class="chat-bubble" style="color: #A7F3D0;">🤖 [AI Mentor]: "Tell me about your career goals."</div>
-                <div class="chat-bubble" style="background: rgba(255,255,255,0.1); margin-left: 1.5rem;">👤 [User]: "I want to attending meetings..."</div>
-                <div class="chat-bubble" style="color: #FBBF24;">⚡ [Fix]: Try saying "I want to *attend* meetings..." for precise formal grammar.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2 class="section-title">Validated Success Stories</h2>
-            <div class="testimonial-grid">
-                <div class="glass-card testimonial-card">
-                    <p>“This training completely changed my speaking confidence.”</p>
-                    <div class="student-profile">— Corporate Professional, Chennai</div>
-                </div>
-                <div class="glass-card testimonial-card">
-                    <p>“I can now speak English comfortably in interviews.”</p>
-                    <div class="student-profile">— Engineering Graduate, Trichy</div>
-                </div>
-                <div class="glass-card testimonial-card">
-                    <p>“The AI app helped me practice every day without fear.”</p>
-                    <div class="student-profile">— Tech Lead, Bengaluru</div>
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Engineered For Rapid Verbal Transformation</h2>
+                <div class="features-grid">
+                    <div class="glass-card">
+                        <div class="feature-icon">01</div>
+                        <h3>Executive Mentorship</h3>
+                        <p>Work step-by-step with specialized corporate professionals who understand modern marketplace linguistic requirements.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="feature-icon">02</div>
+                        <h3>Absolute Privacy</h3>
+                        <p>Enjoy judgment-free individual sessions focused exclusively on building your unique fluency baseline at your own comfort speed.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="feature-icon">03</div>
+                        <h3>Targeted Diagnostics</h3>
+                        <p>We analyze exactly where your speech stumbles—whether it is grammatical assembly or vocabulary recall latency—and resolve it systematically.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Willspire Academy</h2>
-            <div class="contact-grid">
-                <div class="glass-card contact-card"><h4>📍 Address</h4><p>No.4, Pragara Street, Karaikal</p></div>
-                <div class="glass-card contact-card"><h4>📞 Phone</h4><p>99977 76043</p></div>
-                <div class="glass-card contact-card"><h4>💬 Support</h4><p>Mentorship Available</p></div>
+        <section id="deep-curriculum">
+            <div class="container">
+                <h2 class="section-title">The Willspire Core Fluency Blueprint</h2>
+                <div class="curriculum-grid">
+                    <div>
+                        <div class="module-block">
+                            <h4>Phase 1: Elimination of Speech Hesitation</h4>
+                            <p>Overcome underlying psychological blocks, imposter syndrome, and translated thought loops. Train your mind to think and execute responses directly in English natively.</p>
+                        </div>
+                        <div class="module-block">
+                            <h4>Phase 2: Structural Precision Mechanics</h4>
+                            <p>Master deep syntax control without memorizing complex grammatical rules. Clean up tense errors, sentence agreement issues, and everyday conversational mechanics instantly.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="module-block">
+                            <h4>Phase 3: Executive Corporate Articulation</h4>
+                            <p>Command modern professional vocabulary. Confidently lead cross-functional project updates, pitch proposals to high-value prospects, and master formal email tone configurations.</p>
+                        </div>
+                        <div class="module-block">
+                            <h4>Phase 4: Nuanced Pronunciation Control</h4>
+                            <p>Neutralize regional speaking inflections. Develop clean verbal cadences, dynamic stress placement patterns, and high-impact pacing strategies for seamless global communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">Your Straightforward Pathway To Success</h2>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <span class="step-num">Step 01</span>
+                        <h4>Secure Consultation</h4>
+                        <p>Fill out our premium web-lead capture form below to register your interest profile with our central board panel desk.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-num">Step 02</span>
+                        <h4>Linguistic Diagnostic</h4>
+                        <p>Complete a dedicated 1-on-1 discovery phone evaluation to track exactly where structural hesitation or pronunciation errors break down.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-num">Step 03</span>
+                        <h4>Begin Transformation</h4>
+                        <p>Activate your custom learning roadmap, sync up your premium personal mentor, and track measurable fluency gains from week one.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-app">
+            <div class="container ai-grid">
+                <div>
+                    <span class="badge-premium">Next-Gen Interface</span>
+                    <h2 style="font-family: var(--font-display); font-size: 2.5rem; letter-spacing:-1px; margin-bottom: 1rem;">Your 24/7 AI Speaking Partner</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; line-height:1.6;">Practice conversational setups in real-time. Receive instant feedback, precise spelling and structural fixes, and build confidence before important conversations.</p>
+                </div>
+                <div class="ai-app-visual">
+                    <div class="ui-header"><div class="ui-dot"></div><div class="ui-dot"></div><div class="ui-dot"></div></div>
+                    <div class="chat-bubble" style="color: #A7F3D0;">🤖 [AI Mentor]: "Tell me about your career goals."</div>
+                    <div class="chat-bubble" style="background: rgba(255,255,255,0.1); margin-left: 1.5rem;">👤 [User]: "I want to attending meetings..."</div>
+                    <div class="chat-bubble" style="color: #FBBF24;">⚡ [Fix]: Try saying "I want to *attend* meetings..." for precise formal grammar.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2 class="section-title">Validated Career Shifts</h2>
+                <div class="testimonial-grid">
+                    <div class="glass-card testimonial-card">
+                        <p>“The absolute focus on personal mistakes saved me months of time. I can finally lead team sync calls comfortably without preparing a rigid script beforehand.”</p>
+                        <div class="student-profile">— Corporate Project Lead, Chennai</div>
+                    </div>
+                    <div class="glass-card testimonial-card">
+                        <p>“I used to freeze up during technical interview loops. After working through Phase 1 and 2, I cleared my technical screening rounds flawlessly.”</p>
+                        <div class="student-profile">— Software Development Specialist, Trichy</div>
+                    </div>
+                    <div class="glass-card testimonial-card">
+                        <p>“The companion app practice tools gave me a safe space to train my articulation every night. My speaking speed has improved significantly.”</p>
+                        <div class="student-profile">— Senior Analyst, Bengaluru</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Willspire Academy</h2>
+                <div class="contact-grid">
+                    <div class="glass-card contact-card"><h4>📍 Main Office Location</h4><p>No.4, Pragara Street, Karaikal</p></div>
+                    <div class="glass-card contact-card"><h4>📞 Academic Desk Phone</h4><p>99977 76043</p></div>
+                    <div class="glass-card contact-card"><h4>💬 Admissions Support</h4><p>Custom Training Enquiries Open</p></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container" style="text-align: center;">
+                <p>&copy; 2026 Willspire Academy. All Individual Educational Portals Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="thankyou-view">
+        <div class="thankyou-glow" style="top: -10%; left: -10%;"></div>
+        <div class="thankyou-glow" style="bottom: -10%; right: -10%;"></div>
+
+        <div class="success-container" id="successContainer">
+            
+            <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem;">
+                <div class="premium-emblem" style="width: 36px; height: 36px; background: var(--emerald-gradient); border-radius: 9px; transform: rotate(45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
+                    <span style="color: #FFFFFF; font-weight: 800; font-size: 1rem; transform: rotate(-45deg); font-family: var(--font-display);">W</span>
+                </div>
+                <div class="logo" style="font-family: var(--font-display); font-weight: 800; font-size: 1.8rem; color: #FFFFFF; letter-spacing: -0.5px;">
+                    Willspire<span style="color: var(--emerald-primary);">.</span>
+                </div>
+            </div>
+
+            <div class="success-card">
+                <div class="success-icon-wrap">✓</div>
+                <span class="badge-dark-premium">Priority Board Entry Verified</span>
+                
+                <h2>Application Accepted.</h2>
+                
+                <p class="description">Your registration parameters have successfully bypassed the public waitlist and have been securely allocated to our priority admissions board.</p>
+
+                <div class="next-steps-box">
+                    <h4>Executive Protocol Schedule:</h4>
+                    <div class="step-item">
+                        <div class="step-badge">1</div>
+                        <p><strong>Profile Evaluation:</strong> Our senior fluency director will personally audit your account application details.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">2</div>
+                        <p><strong>Direct VIP Contact:</strong> A private 1-on-1 diagnostic evaluation call will be placed to your mobile line within 24 business hours.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">3</div>
+                        <p><strong>Fluency Chart Issuance:</strong> We will construct and hand over your customized core communication breakdown report completely complimentary.</p>
+                    </div>
+                </div>
+
+                <a href="index.html" class="btn-gradient">Return to Dashboard</a>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 Willspire Academy. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <div class="modal-overlay" id="leadModal">
         <div class="lead-form-card">
@@ -264,7 +508,7 @@
             </div>
 
             <form id="studentLeadForm">
-                <input type="hidden" name="access_key" value="78a567a5-4bc4-47ee-8e66-cd1d203b078e">
+                <input type="hidden" name="access_key" value="REPLACE_THIS_WITH_YOUR_WEB3FORMS_KEY">
                 <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="form-group">
@@ -279,45 +523,11 @@
                     <label for="studentLocation">Your District / City</label>
                     <input type="text" name="District or City" id="studentLocation" placeholder="e.g., Karaikal, Chennai" required>
                 </div>
+                
                 <button type="submit" id="submitBtn" class="btn-gradient" style="width: 100%; border-radius: 14px; padding: 1rem; margin-top: 1rem;">
                     Submit & Book Consultation
                 </button>
             </form>
-        </div>
-    </div>
-<div id="thankYouPage">
-        <div class="glow-effect" style="top: 20%; left: 30%;"></div>
-        <div class="success-card">
-            <div class="success-icon-wrap">✓</div>
-            <span class="badge-premium">Slot Reserved Successfully</span>
-            <h2 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin-top: 1rem; letter-spacing: -1px;">
-                Thank You, <span id="dynamicName" style="color: var(--emerald-primary);">Student</span>!
-            </h2>
-            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 1.05rem;">
-                Your request for a free One-to-One consultation has been accepted into our admissions desk queue.
-            </p>
-
-            <div class="next-steps-box">
-                <h4 style="font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-main);">
-                    What Happens Next?
-                </h4>
-                <div class="step-item">
-                    <div class="step-badge">1</div>
-                    <p>Our executive senior academic mentor will review your registration location profiles.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-badge">2</div>
-                    <p>You will receive a call directly on your mobile number <strong id="dynamicPhone" style="color: var(--text-main);"></strong> within 24 business hours.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-badge">3</div>
-                    <p>We will construct your custom Fluency Weakness Profile analysis chart absolutely free.</p>
-                </div>
-            </div>
-
-            <button class="btn-gradient" id="backToHomeBtn" style="padding: 1rem 3rem; font-size: 1rem;">
-                Return to Homepage
-            </button>
         </div>
     </div>
 
@@ -328,74 +538,77 @@
         const leadForm = document.getElementById('studentLeadForm');
         const submitBtn = document.getElementById('submitBtn');
         
-        // Thank You Page Elements
-        const mainWebsite = document.getElementById('mainWebsite');
-        const thankYouPage = document.getElementById('thankYouPage');
-        const dynamicName = document.getElementById('dynamicName');
-        const dynamicPhone = document.getElementById('dynamicPhone');
-        const backToHomeBtn = document.getElementById('backToHomeBtn');
+        const landingView = document.getElementById('landing-view');
+        const thankyouView = document.getElementById('thankyou-view');
+        const premiumLoader = document.getElementById('premium-loader');
+        const successContainer = document.getElementById('successContainer');
 
+        // Modal triggers
         openModalButtons.forEach(button => {
             button.addEventListener('click', () => modalOverlay.classList.add('active'));
         });
-
         closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
         modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) modalOverlay.classList.remove('active'); });
 
-        // Handle Form Submission
+        // Intercept Form Submit & Control transitions directly inside one window framework
         leadForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Stop standard blank page redirect reload
             
-            submitBtn.innerText = "Securing Your Slot...";
+            submitBtn.innerText = "Securing Your Priority Slot...";
             submitBtn.style.opacity = "0.7";
             submitBtn.disabled = true;
 
             const formData = new FormData(leadForm);
-            
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            // Transmit lead logs quietly behind the scenes to Web3Forms API endpoint
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
             })
             .then(async (response) => {
                 if (response.status == 200) {
-                    // Extract data for personalization
-                    const nameInput = document.getElementById('studentName').value;
-                    const phoneInput = document.getElementById('studentPhone').value;
-                    
-                    // Inject details directly into the dynamic Thank You page fields
-                    dynamicName.innerText = nameInput;
-                    dynamicPhone.innerText = phoneInput;
-
-                    // Close input modal window safely
+                    // Turn off modal window layout cleanly 
                     modalOverlay.classList.remove('active');
                     
-                    // Smooth transformation to Thank You page layout
-                    mainWebsite.style.display = "none";
-                    window.scrollTo(0,0);
-                    thankYouPage.classList.add('active');
+                    // Launch beautiful loading system sequence framework
+                    premiumLoader.style.display = 'flex';
                     
-                    leadForm.reset();
+                    setTimeout(() => {
+                        // Wipe landing markup interface view out completely 
+                        landingView.style.display = 'none';
+                        
+                        // Adapt global body layout environment parameters to Premium Luxury Dark Theme styling variables
+                        document.body.style.backgroundColor = '#0B0F19';
+                        document.body.style.color = '#F3F4F6';
+                        
+                        // Turn on hidden thank you elements frame inside main window matrix
+                        thankyouView.style.display = 'flex';
+                        
+                        // Fade Loader UI elements off gracefully out of focus area range
+                        premiumLoader.style.opacity = '0';
+                        setTimeout(() => { 
+                            premiumLoader.style.display = 'none'; 
+                            // Fire premium smooth element up-drift reveal entry sequence
+                            successContainer.classList.add('reveal-animate');
+                        }, 500);
+
+                    }, 1600); // Builds high-value calculations feeling suspense 
+
                 } else {
-                    alert("Configuration Error: Make sure your Web3Forms Access Key is pasted accurately inside the code.");
+                    alert("Something went wrong. Please check your network connection and try again.");
+                    submitBtn.innerText = "Submit & Book Consultation";
+                    submitBtn.style.opacity = "1";
+                    submitBtn.disabled = false;
                 }
             })
             .catch(error => {
-                alert("Network latency error. Please check your internet connection.");
-            })
-            .finally(() => {
-                submitBtn.innerText = "Submit & Book Consultation";
-                submitBtn.style.opacity = "1";
-                submitBtn.disabled = false;
+                console.log(error);
+                alert("Form submission failed. Please double check submission network profiles.");
             });
-        });
-
-        // Return Home button handler
-        backToHomeBtn.addEventListener('click', () => {
-            thankYouPage.classList.remove('active');
-            mainWebsite.style.display = "block";
-            window.scrollTo(0,0);
         });
     </script>
 </body>
 </html>
-    
